@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="344.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dyakushev.controller.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="configurationMenuItem" mnemonicParsing="false" onAction="#handleConfigurationMenuAction" text="Configuration" />
+                        <MenuItem fx:id="sipTraceMenuItem" mnemonicParsing="false" onAction="#handleSipTraceMenuAction" text="SIP Trace" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#handleCloseAction" text="Exit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="BOTTOM_CENTER">
+            <tabs>
+                <Tab text="Management">
+                    <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegisterButtonAction" prefHeight="132.0" prefWidth="328.0" text="Register" />
+                                <Button fx:id="unregisterButton" mnemonicParsing="false" onAction="#handleUnRegisterButtonAction" prefHeight="154.0" prefWidth="327.0" text="Unregister" />
+                            </children>
+                        </VBox>
+                    </content>
+
+                </Tab>
+                <Tab text="Phone" />
+            </tabs>
+        </TabPane>
+    </center>
+   <bottom>
+      <HBox prefHeight="20.0" prefWidth="328.0" BorderPane.alignment="CENTER">
+         <children>
+              <Label fx:id="statusLabel" text="status" textFill="#4a2822">
+                  <font>
+                      <Font size="14.0" />
+                  </font>
+              </Label>
+            <Circle fx:id="circleStatus" fill="#ff2e1f" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="listeningPointLabel" text="" contentDisplay="TOP"/>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
